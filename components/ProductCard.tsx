@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
@@ -15,19 +16,13 @@ export function ProductCard({ product }: ProductCardProps) {
     <div className="group relative bg-brand-gray-dark border border-brand-gold/10 overflow-hidden transition-all duration-500 hover:border-brand-gold/30">
       {/* Image Container */}
       <Link href={`/product/${product.id}`} className="block relative aspect-[3/4] overflow-hidden bg-brand-gray-mid">
-        {/* Placeholder image with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-gray-mid to-brand-black flex items-center justify-center">
-          <div className="text-center px-4">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-full border border-brand-gold/20 flex items-center justify-center">
-              <svg className="w-8 h-8 text-brand-gold/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-              </svg>
-            </div>
-            <p className="text-xs text-brand-offwhite/20 font-sans uppercase tracking-wider">
-              {product.category.replace("-", " ")}
-            </p>
-          </div>
-        </div>
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-brand-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">

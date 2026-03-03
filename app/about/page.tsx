@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -15,18 +16,16 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-gold/5 via-transparent to-transparent" />
         <div className="section-container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Image placeholder */}
-            <div className="relative aspect-[3/4] bg-brand-gray-dark border border-brand-gold/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-gray-mid to-brand-black flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full border-2 border-brand-gold/20 flex items-center justify-center">
-                    <span className="text-4xl font-serif text-brand-gold/30">SW</span>
-                  </div>
-                  <p className="text-xs text-brand-offwhite/20 uppercase tracking-widest font-sans">
-                    Sharde Williams
-                  </p>
-                </div>
-              </div>
+            {/* Founder Image */}
+            <div className="relative aspect-[3/4] bg-brand-gray-dark border border-brand-gold/10 overflow-hidden">
+              <Image
+                src="/images/logo.png"
+                alt="Sharde Williams"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
               <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-brand-gold/20 -z-10" />
             </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { products, getProductBySlug, getProductsByCategory } from "@/lib/products";
@@ -69,18 +70,14 @@ export default function ProductPage({ params }: ProductPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Image */}
             <div className="aspect-[3/4] bg-brand-gray-dark border border-brand-gold/10 overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-gray-mid to-brand-black flex items-center justify-center">
-                <div className="text-center px-4">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full border-2 border-brand-gold/20 flex items-center justify-center">
-                    <svg className="w-12 h-12 text-brand-gold/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-brand-offwhite/20 uppercase tracking-widest font-sans">
-                    Product Image
-                  </p>
-                </div>
-              </div>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                priority
+              />
             </div>
 
             {/* Product Info */}

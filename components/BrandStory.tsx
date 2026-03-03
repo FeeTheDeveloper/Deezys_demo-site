@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function BrandStory() {
   return (
     <section className="py-24 bg-brand-gray-dark relative overflow-hidden">
@@ -6,18 +8,15 @@ export function BrandStory() {
 
       <div className="section-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Image Placeholder */}
+          {/* Left: Brand Image */}
           <div className="relative aspect-[4/5] bg-brand-gray-mid border border-brand-gold/10 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-gray-mid to-brand-black flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-brand-gold/20 flex items-center justify-center">
-                  <span className="text-3xl font-serif text-brand-gold/30">SW</span>
-                </div>
-                <p className="text-xs text-brand-offwhite/20 uppercase tracking-widest font-sans">
-                  Brand Image
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Sharde Williams Brand"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
             {/* Gold border accent */}
             <div className="absolute -bottom-2 -right-2 w-full h-full border-2 border-brand-gold/20 -z-10" />
           </div>
