@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sharde Williams — Luxury Personal Brand & Ecommerce
 
-## Getting Started
+A high-end, black + gold luxury ecommerce website for **Sharde Williams** — beauty, curvy-style fashion, and fitness-lifestyle.
 
-First, run the development server:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFeeTheDeveloper%2FDeezys_demo-site)
+
+## Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org) (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Fonts**: Playfair Display (serif) + Inter (sans) via `next/font`
+- **Deployment**: Vercel (zero-config)
+
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── page.tsx              # Homepage (hero, featured, brand story, newsletter)
+├── shop/page.tsx         # Shop with category filters + external storefronts
+├── product/[slug]/       # Dynamic product detail pages
+├── cart/page.tsx          # Shopping cart
+├── checkout/page.tsx      # Checkout (placeholder)
+├── about/page.tsx         # About Sharde
+├── work-with-me/page.tsx  # Brand collaborations
+├── contact/page.tsx       # Contact form
+├── layout.tsx             # Root layout (fonts, metadata, providers)
+└── globals.css            # Tailwind + custom luxury utility classes
 
-## Learn More
+components/
+├── Navbar.tsx             # Fixed header with logo + mobile menu
+├── Footer.tsx             # Footer with socials + newsletter
+├── HeroSplash.tsx         # Full-screen hero
+├── SplashScreen.tsx       # Opening logo splash screen
+├── ProductCard.tsx        # Product card component
+├── ProductGrid.tsx        # Filterable product grid
+├── FeaturedCollection.tsx # Featured products carousel
+├── BrandStory.tsx         # Brand story section
+├── NewsletterSection.tsx  # Email signup
+└── ExternalShopSection.tsx # ShopMy / LTK / TruFusion links
 
-To learn more about Next.js, take a look at the following resources:
+lib/
+├── products.ts            # Mock product data + helpers
+└── cart-context.tsx       # Cart state (React Context)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**One-click:**
 
-## Deploy on Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFeeTheDeveloper%2FDeezys_demo-site)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Or manually:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push this repo to GitHub
+2. Go to [vercel.com/new](https://vercel.com/new)
+3. Import the repository
+4. Click **Deploy** — no configuration needed
+
+Vercel auto-detects Next.js. Build command (`next build`) and output directory are handled automatically.
+
+## Scripts
+
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start dev server         |
+| `npm run build` | Production build         |
+| `npm run start` | Start production server  |
+| `npm run lint`  | Run ESLint               |
+
+## License
+
+Private project — all rights reserved.
